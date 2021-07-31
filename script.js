@@ -1,10 +1,11 @@
-const main_page = document.createElement("div");
-  main_page.className="page"
-main_page.innerHTML=`English Dictionary <br>
-  `;
-
-document.body.append(main_page);
-var x = document.createElement("INPUT");
+window.onload = () => {
+     const main_page = document.createElement("div");
+    main_page.className="page"
+    main_page.innerHTML=`English Dictionary <br>
+    `;
+    
+   document.body.append(main_page);
+   var x = document.createElement("INPUT");
 x.setAttribute("type", "text");
 x.setAttribute("placeholder", "Search...");
 x.setAttribute("name","word");
@@ -18,8 +19,9 @@ a.onclick=function(){
   var c = x.value;
   getMeaning(c);
   document.querySelector(".bod").remove();
-  
 }
+}
+
 async function getMeaning(word1){
   const data1 = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${word1}`);
   
